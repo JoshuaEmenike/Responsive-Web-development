@@ -1,0 +1,338 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600&family=Lato:wght@400;700&display=swap');
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #FFFFFF;
+    color: #070410;
+}
+
+/* Header Styles */
+header {
+    background-color: #231651;
+    color: #FFFFFF;
+    padding: 16px;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.nav h1 {
+    font-family: 'Teko', sans-serif;
+    font-size: 2em;
+    font-weight: 500;
+}
+
+.nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.nav a:hover {
+    color: #4DCCBD;
+}
+
+.head-button {
+    font-family: 'Teko', sans-serif;
+    font-size: 2em;
+    background-color: #FFFFFF;
+    color: #070410;
+    border: none;
+    border-radius: 16px;
+    padding: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.head-button:hover {
+    background-color: #EEF36A;
+}
+
+/* Main Content */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Movie Card Styles */
+main > div {
+    background-color: #FFFFFF;
+    border: 2px solid #231651;
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+
+
+main > div img {
+    width: 100%;
+    height: auto;
+    border: 2px solid #070410;
+}
+
+main > div h2 {
+    font-family: 'Teko', sans-serif;
+    font-size: 1.5em;
+    color: #231651;
+}
+
+main > div p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1em;
+    line-height: 1.5;
+    color: #070410;
+}
+
+main > div button {
+    font-family: 'Teko', sans-serif;
+    font-size: 2em;
+    background-color: #4DCCBD;
+    color: #070410;
+    border: none;
+    border-radius: 16px;
+    padding: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+/* Movie Card Styles */
+main > div {
+    background-color: #FFFFFF;
+    border: 2px solid #231651;
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    /* Solid-looking shadow from bottom-right */
+    box-shadow: 8px 8px 0 #EEF36A;
+}
+
+
+
+main > div button:hover {
+    background-color: #EEF36A;
+}
+
+/* Tablet Styles (720px and up) */
+@media (min-width: 720px) {
+    header {
+        padding: 16px;
+    }
+
+    .nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 32px;
+    }
+
+    .nav h1 {
+        font-size: 3em;
+        flex: 1 0 100%;
+    }
+
+    .nav a {
+        flex: 0;
+    }
+
+    .head-button {
+        margin-left: auto;
+    }
+
+    main {
+        padding: 32px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+    }
+}
+
+/* Desktop Styles (1024px and up) */
+@media (min-width: 1024px) {
+    header {
+        padding: 16px 48px;
+    }
+
+    .nav {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 48px;
+    }
+
+    .nav h1 {
+        flex: 0;
+        margin-right: auto;
+    }
+
+    .nav a {
+        flex: 0;
+    }
+
+    .head-button {
+        flex: 0;
+        margin-left: 0;
+    }
+
+    main {
+        padding: 48px;
+        gap: 48px;
+    }
+
+    /* First movie card - hero layout with image left, content right */
+    .movie1 {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 1fr auto;
+        gap: 16px;
+    }
+
+    .movie1 img {
+        grid-column: 1;
+        grid-row: 1 / -1;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .movie1 h2 {
+        grid-column: 2;
+        grid-row: 1;
+        align-self: start;
+    }
+
+    .movie1 p {
+        grid-column: 2;
+        grid-row: 2;
+        align-self: start;
+    }
+
+    .movie1 button {
+        grid-column: 2;
+        grid-row: 3;
+        align-self: end;
+    }
+
+    /* Movies 2 and 3 - side by side */
+    .movie2, .movie3 {
+        grid-column: span 1;
+    }
+
+    /* Movie 4 - image left, content right */
+    .movie4 {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: auto 1fr auto;
+        gap: 16px;
+    }
+
+    .movie4 img {
+        grid-column: 1;
+        grid-row: 1 / -1;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .movie4 h2 {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .movie4 p {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .movie4 button {
+        grid-column: 2;
+        grid-row: 3;
+        align-self: end;
+    }
+
+    /* Movie 5 - image left, content right */
+    .movie5 {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: auto 1fr auto;
+        gap: 16px;
+    }
+
+    .movie5 img {
+        grid-column: 1;
+        grid-row: 1 / -1;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .movie5 h2 {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .movie5 p {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .movie5 button {
+        grid-column: 2;
+        grid-row: 3;
+        align-self: end;
+    }
+
+    /* Movie 6 - image left, content right */
+    .movie6 {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: auto 1fr auto;
+        gap: 16px;
+    }
+
+    .movie6 img {
+        grid-column: 1;
+        grid-row: 1 / -1;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .movie6 h2 {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .movie6 p {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .movie6 button {
+        grid-column: 2;
+        grid-row: 3;
+        align-self: end;
+    }
+}
